@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>酒店管理系统</title>
+  <style type="text/css">
+  *{margin:0;padding:10px;font-size:14px}
+  a{text-decoration:none;font-family:"微软雅黑";
+		font-size:20px; color:#000}
+  ul{list-style:none;height:30px;}
+  li{list-style:none}
+  .nav1{
+	   margin-top:50px;}
+  .nav1 li a{
+	  margin: 0 auto;
+	  display:block;
+	  text-align:center;
+	  line-height:30px; 
+	  height:30px;
+	  width:200px;
+	  background-color:#cccccc;
+      margin-bottom:1px;
+	  filter:alpha(Opacity=50);-moz-opacity:0.6;opacity: 0.6;
+	  transition:width 0.2s;
+      -moz-transition:width 0.2s; /* Firefox 4 */
+      -webkit-transition:width 0.2s; /* Safari and Chrome */
+      -o-transition:width 0.2s; /* Opera */
+    }
+ 
+   .nav1 li a:hover{
+  	background-color:#993300;color:#fff;
+	height:30px;line-height:30px;
+	width:280px;
+	
+  	}
+	
+    .nav3 {
+		margin-left:30px;
+		font-family:"微软雅黑";
+		font-size:40px;
+		}
+.back{ 
+	   background:url(photo/p3.jpg) no-repeat;
+	   width:100%; 
+	   height:100%; 
+	  
+	   position: fixed; 
+	 /*  width: 100%;position: absolute;top: 0;left: 0;*/
+	   }
+    #show{
+	width:230px;
+	height:30px;
+	float:right;}
+</style>
+<script language="javascript" type="text/javascript">
+window.onload = function(){
+	showTime();
+	}
+	function checkTime(i){
+		if(i<10){
+			i='0'+i;
+			}
+			return i;
+		}
+	function showTime(){
+		var myDate = new Date();
+	var year = myDate.getFullYear();
+	var month = myDate.getMonth()+1;
+	var date = myDate.getDate(); 
+	var day = myDate.getDay();
+	var h  = myDate.getHours();
+	var m = myDate.getMinutes();
+	var s = myDate.getSeconds();
+	m = checkTime(m);
+	s = checkTime(s);
+	var weekday = new Array(6)
+	weekday[0] = "星期日"
+	weekday[1] = "星期一"
+	weekday[2] = "星期二"
+	weekday[3] = "星期三"
+	weekday[4] = "星期四"
+	weekday[5] = "星期五"
+	weekday[6] = "星期六"
+	document.getElementById("showtime").innerHTML=year+'年'+month+'月'+date+'日'
+	+weekday[day]+h+':'+m+':'+s;
+	setTimeout(showTime,500);
+	}
+
+</script>
+</head>
+ 
+ <body  class="back" >
+     <header >
+     <div id="show" ><div id="showtime"></div></div>
+       <p class="nav3">XXXX酒店管理系统</p>
+       <ul class="nav1">
+       <li><a href="#">首&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页</a></li>
+       <li><a href="#">预约管理</a></li>
+       <li><a href="#">订单查询</a></li>
+       <li><a href="#">酒店管理</a></li>
+       <li><a href="#">关于我们</a></li>
+       </ul>
+     </header>
+
+ 
+ </body>
+</html>
